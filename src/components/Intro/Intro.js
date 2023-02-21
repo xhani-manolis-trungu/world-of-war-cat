@@ -2,11 +2,13 @@ import { NavLink } from 'react-router-dom';
 
 import './Intro.scss';
 
-function Intro() {
+const Intro = () => {
     return (
         <div className="Intro">
-            <header className="Intro-header">
+            <div className="section__title">
                 <h1>World of WarCat</h1>
+            </div>
+            <header className="Intro-header">
                 <NavLink
                     className="nav__menu_link"
                     to="/WoW"
@@ -16,7 +18,7 @@ function Intro() {
             </header>
         </div>
     );
-  }
+  };
   
   export default Intro;
   
