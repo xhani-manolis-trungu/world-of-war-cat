@@ -15,7 +15,7 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
-      <header className="app-wrapper">
+      <header>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />} />

@@ -12,7 +12,7 @@ const fetchCardsData = (abortController) => {
 
     return async (dispatch) => {
         try {
-            const response = await fetch(`https://api.thecatapi.com/v1/breeds?api_key=live_37WZvLmbEFAfFb8Y2z9eIFxasFRK4OboEYq0ZU2UlXEOJCAEPbBt3MVUJwQKAiKy&limit=10&page=${pageCount}`, { signal: abortController.signal });
+            const response = await fetch(`https://api.thecatapi.com/v1/breeds?api_key=live_37WZvLmbEFAfFb8Y2z9eIFxasFRK4OboEYq0ZU2UlXEOJCAEPbBt3MVUJwQKAiKy&limit=6&page=${pageCount}`, { signal: abortController.signal });
 
             if (!response.ok) {
                 dispatch(setFetchCardsDataErrorMessage('Error: There are some problems with response of breeds data'));

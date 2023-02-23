@@ -45,37 +45,38 @@ const WoW = () => {
     };
 
     return (
-        
-        <div ref={scrollPoint} className="section">
-            <div className="container">
-                <section className="gallery">
-                    <div className="gallery__wrapper">
-                        <>
-                            {isCardsDataFetching
-                                ? <PagePreloader />
-                                : isCardsDataFetchError
-                                    ? <p className="error">{cardsDataFetchErrorMessage}</p>
-                                    : <CardList />
-                            }
-                        </>
-                        <button
-                            className="gallery__button button"
-                            disabled={isCardsDataFetching || isCardsDataFetchError}
-                            onClick={makeFetchRequest}
-                        >
-                            Watch more
-                        </button>
+        <div className="app-wrapper">
+            <div ref={scrollPoint} className="section">
+                <div className="container">
+                    <section className="gallery">
+                        <div className="gallery__wrapper">
+                            <>
+                                {isCardsDataFetching
+                                    ? <PagePreloader />
+                                    : isCardsDataFetchError
+                                        ? <p className="error">{cardsDataFetchErrorMessage}</p>
+                                        : <CardList />
+                                }
+                            </>
+                            <button
+                                className="gallery__button button"
+                                disabled={isCardsDataFetching || isCardsDataFetchError}
+                                onClick={makeFetchRequest}
+                            >
+                                Watch more
+                            </button>
 
-                        <button
-                            className="pagination"
-                            disabled={isCardsDataFetching || isCardsDataFetchError}
-                            onClick={scrollTop}
-                            aria-label="scroll top"
-                        >
-                            <MdKeyboardArrowUp color={'#fff'} size={'36px'} aria-label="scroll top" />
-                        </button>
-                    </div>
-                </section>
+                            <button
+                                className="pagination"
+                                disabled={isCardsDataFetching || isCardsDataFetchError}
+                                onClick={scrollTop}
+                                aria-label="scroll top"
+                            >
+                                <MdKeyboardArrowUp color={'#fff'} size={'36px'} aria-label="scroll top" />
+                            </button>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     );

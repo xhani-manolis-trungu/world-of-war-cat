@@ -8,6 +8,8 @@ function Modal({ children, isOpen, handleClose }) {
 	const nodeRef = useRef(null);
 	
 	useEffect(() => {
+		let count = 0;
+		console.log(`use effect in Modal is called ${count = count + 1} times`);
 		const closeOnEscapeKey = (e) => (e.key === 'Escape' ? handleClose() : null);
 		document.body.addEventListener('keydown', closeOnEscapeKey);
 		return () => {
